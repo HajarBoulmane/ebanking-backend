@@ -3,6 +3,7 @@ package net.hajar.ebankingbackend.web;
 import net.hajar.ebankingbackend.dtos.*;
 import net.hajar.ebankingbackend.exceptions.*;
 import net.hajar.ebankingbackend.services.BankAccountService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class BankAccountRestController {
     }
 
     @GetMapping("/accounts/{accountId}")
+    @PreAuthorize("hasAuthority('SCOPE_USER')")
     public BankAccountDTO getBankAccount(
             @PathVariable String accountId)
             throws BankAccountNotFoundException {
@@ -25,17 +27,20 @@ public class BankAccountRestController {
     }
 
     @GetMapping("/accounts")
+    @PreAuthorize("hasAuthority('SCOPE_USER')")
     public List<BankAccountDTO> listAccounts() {
         return bankAccountService.bankAccountList();
     }
 
     @GetMapping("/accounts/{accountId}/operations")
+    @PreAuthorize("hasAuthority('SCOPE_USER')")
     public List<AccountOperationDTO> getHistory(
             @PathVariable String accountId) {
         return bankAccountService.accountHistory(accountId);
     }
 
     @GetMapping("/accounts/{accountId}/pageOperations")
+    @PreAuthorize("hasAuthority('SCOPE_USER')")
     public AccountHistoryDTO getAccountHistory(
             @PathVariable String accountId,
             @RequestParam(name = "page", defaultValue = "0")
@@ -48,6 +53,7 @@ public class BankAccountRestController {
     }
 
     @PostMapping("/accounts/debit")
+    @PreAuthorize("hasAuthority('SCOPE_USER')")
     public DebitDTO debit(
             @RequestBody DebitDTO debitDTO)
             throws BankAccountNotFoundException,
@@ -60,6 +66,7 @@ public class BankAccountRestController {
     }
 
     @PostMapping("/accounts/credit")
+    @PreAuthorize("hasAuthority('SCOPE_USER')")
     public CreditDTO credit(
             @RequestBody CreditDTO creditDTO)
             throws BankAccountNotFoundException {
@@ -71,6 +78,7 @@ public class BankAccountRestController {
     }
 
     @PostMapping("/accounts/transfer")
+    @PreAuthorize("hasAuthority('SCOPE_USER')")
     public void transfer(
             @RequestBody TransferRequestDTO transferRequestDTO)
             throws BankAccountNotFoundException,
