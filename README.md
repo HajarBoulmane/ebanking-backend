@@ -44,6 +44,7 @@ Exception handling
 Secure endpoints
 # Installation
 git clone https://github.com/HajarBoulmane/ebanking-backend.git
+
 cd ebanking-backend
 
 Run the project:
