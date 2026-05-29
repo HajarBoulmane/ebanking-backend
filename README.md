@@ -42,27 +42,16 @@ Debit / Credit / Transfer operations
 REST API architecture
 Exception handling
 Secure endpoints
-# Installation
-git clone https://github.com/HajarBoulmane/ebanking-backend.git
 
+# Clone the repository
+git clone https://github.com/HajarBoulmane/ebanking-backend.git
 cd ebanking-backend
 
-Run the project:
+# Update application.properties file (as shown above)
+nano src/main/resources/application.properties
 
+# Run the application
 ./mvnw spring-boot:run
-
-or
-
-mvn spring-boot:run
-
-API runs on:
-
-http://localhost:8085
-🗄️ Database Configuration
-
-Update database credentials inside:
-
-src/main/resources/application.properties
 
 Example:
 
