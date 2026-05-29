@@ -3,7 +3,7 @@
 A secure backend API for a digital banking application built with Spring Boot.  
 It provides RESTful services for account management, transactions, authentication, and banking operations.
 
-## 🚀 Tech Stack
+##  Tech Stack
 - Java
 - Spring Boot
 - Spring Security
@@ -12,7 +12,7 @@ It provides RESTful services for account management, transactions, authenticatio
 - MySQL
 - Maven
 
-## 📁 Project Structure
+##  Project Structure
 
 ```bash
 ebanking-backend/
