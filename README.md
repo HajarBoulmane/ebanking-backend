@@ -53,8 +53,3 @@ nano src/main/resources/application.properties
 # Run the application
 ./mvnw spring-boot:run
 
-Example:
-
-spring.datasource.url=jdbc:mysql://localhost:3306/E-BANKING
-spring.datasource.username=root
-spring.datasource.password=
